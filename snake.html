@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Snake</title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        #game {
+            width: 99.5%;
+        }
+
+        #controls {
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            text-align: center;
+            width: 300px;
+            height: 100px;
+            line-height: 33px;
+        }
+
+        #bestScoreTextLbl {
+            font-size: small;
+            font-style: italic;
+        }
+
+        #bestScoreLbl {
+            display: inline-block;
+            width: 300px;
+            font-style: italic;
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        #field {
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3%;
+            display: grid;
+            grid-template-columns: repeat(25, 20px);
+            grid-template-rows: repeat(25, 20px);
+        }
+
+        .gridCell {
+            border: 3px solid white;
+            border-radius: 35%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <div id="controls">
+            <label id="bestScoreTextLbl">Your Best Score...</label>
+            <label id="bestScoreLbl">0</label>
+            <button id="newGameBtn">New Game</button>
+            <select id="difficultySelect"></select>
+            <button id="pauseBtn">Pause</button>
+        </div>
+        <div id="field">
+            
+        </div>
+    </div>
+
+    <script type="module" src="./snake.js"></script>
+</body>
+
+</html>
