@@ -1,4 +1,4 @@
-import { move, startTheGame, playing, } from "./game.js"
+import { move, startTheGame, setPlaying } from "./game.js"
 import props from "./properties.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +25,7 @@ function createNewGameEvent() {
 
 function createPauseEvent() {
     props.dom.pauseBtn.addEventListener("click", () => {
-        playing = false;
+        setPlaying(false);
     });
 }
 

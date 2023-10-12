@@ -22,24 +22,28 @@ function keydownListener(e) {
     if (key == "ArrowLeft" && head.directionX == 0) {
         pendingDirectionX = -1;
         pendingDirectionY = 0;
-        playing = true;
+        setPlaying(true);
     } else if (key == "ArrowRight" && head.directionX == 0) {
         pendingDirectionX = 1;
         pendingDirectionY = 0;
-        playing = true;
+        setPlaying(true);
     } else if (key == "ArrowDown" && head.directionY == 0) {
         pendingDirectionX = 0;
         pendingDirectionY = -1;
-        playing = true;
+        setPlaying(true);
     } else if (key == "ArrowUp" && head.directionY == 0) {
         pendingDirectionX = 0;
         pendingDirectionY = 1;
-        playing = true;
+        setPlaying(true);
     }
 }
 
+export function setPlaying(state) {
+    playing = state;
+}
+
 export function startTheGame() {
-    playing = false;
+    setPlaying(false);
     addKeyBoardEvents();
     for (let cell of cellsInGrid) {
         cell.style.backgroundColor = props.colors.blankColor;
@@ -89,7 +93,7 @@ function moveAStep() {
 }
 
 function onCrashed() {
-    playing = false;
+    setPlaying(true);
     document.removeEventListener("keydown", keydownListener);
     pendingDirectionX = 0;
     pendingDirectionY = 0;
