@@ -93,7 +93,7 @@ function moveAStep() {
 }
 
 function onCrashed() {
-    setPlaying(true);
+    setPlaying(false);
     document.removeEventListener("keydown", keydownListener);
     pendingDirectionX = 0;
     pendingDirectionY = 0;
